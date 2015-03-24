@@ -3,18 +3,19 @@
   (:require [datomic.api :as d]
             [clojure.pprint :refer [pprint]]))
 
-(def calvin "awesome")
-(def uri "datomic:mem://awesome")
+(def calvin "tiger")
+(def transactor "localhost:4334/")
+(defn uri [db-name] (str "datomic:free://" transactor db-name))
 
-(defn create-db [uri] (d/create-database uri))
-(create-db uri)
-(def conn (d/connect uri))
+(defn create-db [db-name] (d/create-database (uri db-name)))
+;;(create-db uri)
+(defn conn [db-name] (d/connect (uri db-name)))
 
 (defn get-like [name](d/q '[:find ?p :in $ ?n :where [?e :person/name ?n]
-			[?e :person/like ?p]] (d/db conn) name))
+			[?e :person/like ?p]] (d/db (conn "test")) name))
 (def tx-result
   (d/transact
-   conn
+   (conn "test")
    [[:db/add
      (d/tempid :db.part/user)
      :db/doc
