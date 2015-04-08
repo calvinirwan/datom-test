@@ -11,4 +11,10 @@
                                   [com.datomic/datomic-free "0.9.5130"]
                                   [incanter/incanter-charts "1.3.0"]
                                   [incanter/incanter-pdf "1.3.0"]]}}
-  )
+  :aliases {"go"
+            ["with-profile" "calvin,dev" "repl"]
+
+            "gore"
+            ["do"
+             ["with-profile" "calvin,dev" "clean"]
+             ["with-profile" "calvin,dev" "cljsbuild" "auto" "dev"]]})
