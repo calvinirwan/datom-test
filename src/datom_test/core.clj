@@ -3,7 +3,7 @@
   (:require [datomic.api :as d]
             [clojure.pprint :refer [pprint]]))
 
-(def calvin "tiger")
+(def db "zen-eng")
 (def transactor "localhost:4334/")
 (defn uri [db-name] (str "datomic:free://" transactor db-name))
 
@@ -13,13 +13,16 @@
 
 (defn get-like [name](d/q '[:find ?p :in $ ?n :where [?e :person/name ?n]
 			[?e :person/like ?p]] (d/db (conn "test")) name))
-(def tx-result
+#_(def tx-result
   (d/transact
    (conn "test")
    [[:db/add
      (d/tempid :db.part/user)
      :db/doc
      "hello world"]]))
+(defn schema-add 
+  [db schema]
+  (d/transact (conn db) schema))
 
 ;;schema question
 [{:db/id #db/id[:db.part/db]
