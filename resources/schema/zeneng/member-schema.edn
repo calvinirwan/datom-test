@@ -1,92 +1,92 @@
 ;;user
 [{:db/id #db/id[:db.part/db]
-  :db/indent :user/twitter-id
+  :db/ident :user/twitter-id
   :db/valueType :db.type/string
   :db/cardinality :db.cardinality/one
   :db.install/_attribute :db.part/db}
  {:db/id #db/id[:db.part/db]
-  :db/indent :user/twitter-name
+  :db/ident :user/twitter-name
   :db/valueType :db.type/string
   :db/cardinality :db.cardinality/one
   :db.install/_attribute :db.part/db}
  {:db/id #db/id[:db.part/db]
-  :db/indent :user/twitter-screen-name
+  :db/ident :user/twitter-screen-name
   :db/valueType :db.type/string
   :db/cardinality :db.cardinality/one
   :db.install/_attribute :db.part/db}
  {:db/id #db/id[:db.part/db]
-  :db/indent :user/type
+  :db/ident :user/type
   :db/valueType :db.type/string
   :db/cardinality :db.cardinality/one
   :db.install/_attribute :db.part/db}
  {:db/id #db/id[:db.part/db]
-  :db/indent :user/register-date
+  :db/ident :user/register-date
   :db/valueType :db.type/instant
   :db/cardinality :db.cardinality/one
   :db.install/_attribute :db.part/db}
  {:db/id #db/id[:db.part/db]
-  :db/indent :user/last-login-date
+  :db/ident :user/last-login-date
   :db/valueType :db.type/instant
   :db/cardinality :db.cardinality/one
   :db.install/_attribute :db.part/db}
  {:db/id #db/id[:db.part/db]
-  :db/indent :user/exp-date
+  :db/ident :user/exp-date
   :db/valueType :db.type/ref
   :db/cardinality :db.cardinality/one
   :db.install/_attribute :db.part/db}
  {:db/id #db/id[:db.part/db]
-  :db/indent :user/book
+  :db/ident :user/book
   :db/valueType :db.type/ref
   :db/cardinality :db.cardinality/many
   :db.install/_attribute :db.part/db}]
 
 ;;book
 [{:db/id #db/id[:db.part/db]
-  :db/indent :book/title
+  :db/ident :book/title
   :db/valueType :db.type/string
   :db/cardinality :db.cardinality/one
   :db.install/_attribute :db.part/db}]
 
 ;;membership
 [{:db/id #db/id[:db.part/db]
-  :db/indent :membership/voucher
+  :db/ident :membership/voucher
   :db/valueType :db.type/ref
   :db/cardinality :db.cardinality/one
   :db.install/_attribute :db.part/db}
  {:db/id #db/id[:db.part/db]
-  :db/indent :membership/start-date
+  :db/ident :membership/start-date
   :db/valueType :db.type/instant
   :db/cardinality :db.cardinality/one
   :db.install/_attribute :db.part/db}
  {:db/id #db/id[:db.part/db]
-  :db/indent :membership/end-date
+  :db/ident :membership/end-date
   :db/valueType :db.type/instant
   :db/cardinality :db.cardinality/one
   :db.install/_attribute :db.part/db}]
 
 ;;voucher
 [{:db/id #db/id[:db.part/db]
-  :db/indent :voucher/key
+  :db/ident :voucher/key
   :db/valueType :db.type/string
   :db/cardinality :db.cardinality/one
   :db.install/_attribute :db.part/db}
  {:db/id #db/id[:db.part/db]
-  :db/indent :voucher/status
+  :db/ident :voucher/status
   :db/valueType :db.type/string
   :db/cardinality :db.cardinality/one
   :db.install/_attribute :db.part/db}
  {:db/id #db/id[:db.part/db]
-  :db/indent :voucher/serial
+  :db/ident :voucher/serial
   :db/valueType :db.type/integer
   :db/cardinality :db.cardinality/one
   :db.install/_attribute :db.part/db}
  {:db/id #db/id[:db.part/db]
-  :db/indent :voucher/serial-string
+  :db/ident :voucher/serial-string
   :db/valueType :db.type/string
   :db/cardinality :db.cardinality/one
   :db.install/_attribute :db.part/db}
  {:db/id #db/id[:db.part/db]
-  :db/indent :voucher/type
+  :db/ident :voucher/type
   :db/valueType :db.type/string
   :db/cardinality :db.cardinality/one
   :db.install/_attribute :db.part/db}]
